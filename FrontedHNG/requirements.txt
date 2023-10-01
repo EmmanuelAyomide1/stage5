@@ -51,7 +51,7 @@ requests==2.31.0
 rest-framework-simplejwt==0.0.2
 rsa==4.9
 sounddevice==0.4.6
-SpeechRecognition==3.10.0
+SpeechRecognition==3.9.0
 sqlparse==0.4.4
 tqdm==4.66.1
 typing_extensions==4.8.0
