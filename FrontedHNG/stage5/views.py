@@ -4,11 +4,9 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import Video
 from .serializers import VideoSerialize
-from django.views import View
 from django.core.files.storage import default_storage
 from moviepy.editor import VideoFileClip
 from rest_framework.parsers import MultiPartParser , FormParser
-from io import BytesIO
 import speech_recognition as sr
 import  os
 from django.shortcuts import get_object_or_404
