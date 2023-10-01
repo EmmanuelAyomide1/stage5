@@ -49,7 +49,6 @@ PyYAML==6.0.1
 referencing==0.8.9
 requests==2.31.0
 rest-framework-simplejwt==0.0.2
-rpds-py
 rsa==4.9
 sounddevice==0.4.6
 SpeechRecognition==3.10.0
