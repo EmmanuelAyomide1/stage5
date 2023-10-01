@@ -30,7 +30,7 @@ inflection==0.5.1
 jsonschema==4.17.3
 moviepy==1.0.3
 mysqlclient==2.0.3
-numpy==1.26.0
+numpy==1.21.6
 packaging==23.1
 phonenumbers==8.13.21
 Pillow==10.0.1
