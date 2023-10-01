@@ -33,7 +33,7 @@ mysqlclient==2.0.3
 numpy==1.21.6
 packaging==23.1
 phonenumbers==8.13.21
-Pillow==10.0.1
+Pillow==9.5.0
 pocketsphinx==5.0.2
 proglog==0.1.10
 proto-plus==1.22.3
