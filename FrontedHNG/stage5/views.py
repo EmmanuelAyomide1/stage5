@@ -32,7 +32,10 @@ class VideoPost(APIView):
             recognizer=sr.Recognizer()
             with sr.AudioFile(absolute_path_aud) as source:
                audio_data=recognizer.record(source)
-               transcription=recognizer.recognize_google(audio_data)
+               try:
+                    transcription=recognizer.recognize_google(audio_data)
+               except sr.UnknownValueError:
+                   transcription=""
             vid_instance.transcript=transcription
             vid_instance.duration=duration
             vid_instance.save()
