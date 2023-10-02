@@ -45,6 +45,13 @@ class VideoPost(APIView):
             vid_instance.duration=duration
             vid_instance.save()
             video_id=vid_instance.id
+            try:
+                os.remove(absolute_path_aud)  
+                os.remove(absolute_path)
+            except FileNotFoundError:
+                print(f"File not found.")
+            except Exception as e:
+                print(f"Error occurred: {e}")
             return Response({"message":"created sucesfully","video_id":video_id},status=status.HTTP_201_CREATED)
     def get(self,request,video_id,*args,**kwargs):
         vedeo=get_object_or_404(Video,id=video_id)
