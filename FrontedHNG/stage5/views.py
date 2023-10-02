@@ -30,7 +30,10 @@ class VideoPost(APIView):
                 duration="0"
             audio_file_path =default_storage.save('tmp/' + raw_video.name.split('.')[0] + '.wav',raw_video)
             absolute_path_aud=default_storage.path(audio_file_path)
-            vid.audio.write_audiofile(absolute_path_aud,codec="pcm_s16le")
+            try:
+                vid.audio.write_audiofile(absolute_path_aud,codec="pcm_s16le")
+            except AttributeError:
+                return Response ({"message": "video has no audio"})
             recognizer=sr.Recognizer()
             with sr.AudioFile(absolute_path_aud) as source:
                audio_data=recognizer.record(source)
