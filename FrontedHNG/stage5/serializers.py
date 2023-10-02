@@ -8,5 +8,6 @@ class VideoSerialize(serializers.ModelSerializer):
         fields='__all__'
     def validate(self, data):
         if not data:
+            print("no video uploaded")
             raise serializers.ValidationError("There's no uploaded video file")
         return data
