@@ -16,7 +16,6 @@ from django.http import FileResponse
 class VideoPost(APIView):
     parser_classes = (MultiPartParser, FormParser)
     def post(self, request, *args, **kwargs):
-        print(request.FILES.get('video'))
         vid=request.FILES.get('video')
         serialize_vid=VideoSerialize(data={'video':vid})
         if serialize_vid.is_valid(raise_exception=True):
