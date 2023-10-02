@@ -24,7 +24,10 @@ class VideoPost(APIView):
             vid_file_path = default_storage.save('tmp/' + raw_video.name, raw_video)
             absolute_path = default_storage.path(vid_file_path)
             vid=VideoFileClip(absolute_path)
-            duration = vid.duration
+            try:
+                duration = vid.duration
+            except:
+                duration="0"
             audio_file_path =default_storage.save('tmp/' + raw_video.name.split('.')[0] + '.wav',raw_video)
             absolute_path_aud=default_storage.path(audio_file_path)
             vid.audio.write_audiofile(absolute_path_aud,codec="pcm_s16le")
