@@ -33,7 +33,7 @@ class VideoPost(APIView):
             try:
                 vid.audio.write_audiofile(absolute_path_aud,codec="pcm_s16le")
             except AttributeError:
-                return Response ({"message": "video has no audio"})
+                return Response ({"message": "video has no audio", "id":vid_instance.id})
             recognizer=sr.Recognizer()
             with sr.AudioFile(absolute_path_aud) as source:
                audio_data=recognizer.record(source)
