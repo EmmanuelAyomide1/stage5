@@ -19,12 +19,13 @@ from django.urls import path
 from stage5.views import VideoPost,TransGet
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('videos/',VideoPost.as_view(),name='Videop'),
-    path('videos/<int:video_id>/',VideoPost.as_view(),name='Videog'),
-    path('transcript/<int:video_id>/',TransGet.as_view(),name='Tget'),
+    path('videos/',csrf_exempt(VideoPost.as_view()),name='Videop'),
+    path('videos/<int:video_id>/',csrf_exempt(VideoPost.as_view()),name='Videog'),
+    path('transcript/<int:video_id>/',csrf_exempt(TransGet.as_view()),name='Tget'),
 ]
 if settings.DEBUG:
     urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
