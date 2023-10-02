@@ -23,8 +23,8 @@ class VideoPost(APIView):
             raw_video=vid_instance.video
             vid_file_path = default_storage.save('tmp/' + raw_video.name, raw_video)
             absolute_path = default_storage.path(vid_file_path)
-            vid=VideoFileClip(absolute_path)
             try:
+                vid=VideoFileClip(absolute_path)
                 duration = vid.duration
             except:
                 duration="0"
