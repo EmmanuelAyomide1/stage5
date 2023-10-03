@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -52,7 +53,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'FrontedHNG.urls'
@@ -85,7 +85,7 @@ DATABASES = {
         'NAME': 'emmyayo_stage2',
         'USER': 'emmyayo_stage2_user',
         'PASSWORD': 'li7JWNhe3QY9t7yjnu00932XPcRvesFf',
-        'HOST': 'dpg-ck0eba36fquc73dc0nt0-a', 
+        'HOST': 'dpg-ck0eba36fquc73dc0nt0-a',  # Use the appropriate host address
         'PORT': '5432', 
     }
 }
@@ -140,3 +140,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL='/media/'
 MEDIA_ROOT= os.path.join(BASE_DIR,'media/')
 CORS_ALLOW_ALL_ORIGINS = True  
+CORS_ALLOWED_ORIGINS=[
+    "http://localhost:3000",
+]
