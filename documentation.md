@@ -1,14 +1,13 @@
 # Documentation
 ## Sample request
 ##### 1 . Sending video ,sample request
-### endpoint ``
+### endpoint `https://frontedhng.onrender.com/videos/`
 ### method : `post`
  ```
 multipart/form-data 
 "video": videofile
  ```
 ##### sample response
-### endpoint `https://frontedhng.onrender.com/videos/`
 ```
 status: 202
 message: created succesfully
